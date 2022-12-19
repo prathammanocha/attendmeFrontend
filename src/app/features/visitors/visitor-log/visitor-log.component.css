@@ -1,0 +1,63 @@
+.container {
+    margin-top: -10px;
+    background-color: #EDF1F7;
+    min-height: 100%;
+    max-height: max-content;
+    padding-top: 60px;
+    font-family: "Open Sans", sans-serif;
+}
+table {
+    width: 100%;
+    border: 1px solid whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+.mat-card {
+    border-radius: 2px;
+}
+
+.mat-card-header-text {
+    width: 100%;
+}
+
+.mat-card-header {
+    border-bottom: 1px solid #EDF1F7;
+    height: 40px;
+}
+
+.mat-card-title {
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.searchfield {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.mat-form-field {
+    width: 35%;
+    display: inline-block;
+    margin-left: 58%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.addStudentBtn {
+    display: inline-block;
+    background-color: #3269B1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+.mat-row:nth-child(odd){
+    background-color: #F6F9FC;
+}
+
+.editButton {
+    color: #3269B1;
+}
+
+.deleteButton {
+    color: #EE9E3A;
+}

@@ -1,0 +1,68 @@
+html, body, section {
+    height: 104vh;
+    margin-top: -2%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+  
+.left-half {
+    grid-column: 1; 
+    justify-content: center;
+    padding-top: 27%;
+}
+  
+.right-half {
+    padding-top: 42.5%;
+    padding-left: 10%;
+    background: #F7F7F7;
+    grid-column: 2;
+}
+
+.mat-card-title {
+    background-color:#f99d1c;
+    color:white;
+    width: 100%;
+    height: 40px;
+    padding-top: 2%;
+    border-radius: 2px;
+    margin-left: -20px;
+    padding-left: 20px;
+}
+
+.slider-rememberme{
+    width: 100%;
+    color: black;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #2E60A7; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #4E9CD3;  /*replace with your color*/
+}
+
+.login-actions {
+   display: grid;
+   grid-template-columns: 50% 50%;
+}
+
+.forgotBtn {
+    color: #2196f3;
+    padding-top: 3%;
+}
+
+.loginBtn {
+    background-color: #2196f3;
+    color: white;
+    float: right;
+    grid-column: 2;
+}
+
+a,
+a label {
+    cursor: pointer;
+}

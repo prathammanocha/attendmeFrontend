@@ -1,0 +1,104 @@
+{
+  "studentList": [
+    {
+      "studentName": "Pratham",
+      "studentID": "pratham369@yahoo.com",
+      "collegeName": "St Lucia",
+      "gender": "Male",
+      "id": 1
+    }
+  ],
+  "visitorList": [],
+  "logindetails": [
+    {
+      "username": "Pratham",
+      "password": "testing"
+    }
+  ],
+  "teacherlist": [
+    {
+      "teacherName": "Pratham",
+      "teacherID": "pratham.manocha19@GMAIL.COM",
+      "departmentName": "Gatton House",
+      "gender": "Female",
+      "id": "3"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "teacherName": "rsada",
+      "teacherID": "asdad",
+      "departmentName": "Gatton House",
+      "gender": "Male"
+    },
+    {
+      "teacherName": "pratham",
+      "teacherID": "david@eait.edu.au",
+      "departmentName": "Gatton House",
+      "gender": "Male",
+      "id": "qZYdULe"
+    },
+    {
+      "teacherName": "sankas",
+      "teacherID": "sadnasjkndjkasd",
+      "departmentName": "St Lucia",
+      "gender": "Female",
+      "id": "l-iYycD"
+    }
+  ]
+}

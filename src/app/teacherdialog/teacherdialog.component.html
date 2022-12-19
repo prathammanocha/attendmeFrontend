@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add Teacher Information</h1>
+<div mat-dialog-content>
+<form [formGroup]="teacherForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Teacher Name</mat-label>
+        <input matInput formControlName="teacherName" placeholder="Enter Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <mat-select formControlName="departmentName" placeholder="College">
+        <mat-option value="St Lucia">St Lucia</mat-option>
+        <mat-option value="Gatton House">Gatton House</mat-option>
+        <mat-option value="EAIT">EAIT</mat-option>
+        <mat-option value="Human Studies">Human Studies</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Teacher ID</mat-label>
+        <input matInput formControlName="teacherID" placeholder="Enter Teacher Email">
+    </mat-form-field>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="gender">
+        <mat-button-toggle value="Male">Male</mat-button-toggle>
+        <mat-button-toggle value="Female">Female</mat-button-toggle>
+        <mat-button-toggle value="Non-Binary">Non-Binary</mat-button-toggle>
+    </mat-button-toggle-group>
+</form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" (click) = "addTeacher()">{{actionBtn}}</button>
+</div>

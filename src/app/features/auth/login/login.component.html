@@ -1,0 +1,42 @@
+<section class = "container">    
+    <div class="left-half">
+        <form [formGroup]="loginForm" fxFlex="60%" fxFlex.sm="50%" fxFlex.xs="90%">
+            <mat-card>
+                <mat-card-title>Sign In</mat-card-title>
+                <mat-card-subtitle>to continue to Attendme Admin</mat-card-subtitle>
+                <mat-card-content>
+                    <mat-error *ngIf="errormessage">Invalid username or password</mat-error>
+                    <br/>
+                    <br/>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Username" formControlName="username">
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                    <br/>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="password">
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                    <br/>
+                    <br/>
+                    <!-- <div class="slider-rememberme">
+                        <mat-slide-toggle formControlName="rememberMe">Remember me</mat-slide-toggle>
+                    </div> -->
+                </mat-card-content>
+
+                <mat-card-actions class="login-actions">
+                    <a id="resetPassword" (click)="resetPassword()" class="forgotBtn">Forgot your Password?</a>
+                    <button mat-raised-button id="login" (click)="login()" class="loginBtn">Sign in</button>
+                </mat-card-actions>
+
+            </mat-card>
+
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+        </form>
+    </div>
+    <div class = "right-half">
+        <img src="https://i.ibb.co/YjPJR1b/Screenshot-2022-11-22-at-6-10-46-PM.png" height="27%" width="90%">
+    </div>
+</section>

@@ -1,0 +1,72 @@
+/* Show submenu */
+.accordion {
+	max-width: 300px;
+	margin-left: -25px;
+	list-style-type: none;
+}
+.accordion .menu {
+	position: relative;
+	padding: 15px 15px 15px 45px;
+	margin-left: -50px;
+	text-align: left;
+	color: black;
+	background-color: white;
+	font-weight: normal;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	list-style-type: none;
+}
+.accordion li:last-child .menu {
+	border-bottom: 0;
+}
+.accordion li:last-child .submenu {
+	border-radius: 0 0 4px 4px;
+}
+.accordion li:last-child .submenu li:last-child {
+	border-bottom: 0;
+}
+.accordion li mat-icon.arr-icon {
+	position: absolute;
+	top: 25%;
+	color: #595959;
+	transition: all 0.4s ease;
+}
+.accordion li i.fa-chevron-down {
+	right: 1rem;
+	left: auto;
+}
+.accordion li.active mat-icon.arr-icon {
+	transform: rotate(90deg);
+}
+.accordion li.active .menu {
+	color: black;
+}
+.accordion li.active i {
+	color: white;
+}
+.submenu {
+	height: 0;
+	overflow: hidden;
+	background: #F6F9FC;
+	font-size: 14px;
+	margin-left: -85px;
+	text-align: left;
+	list-style-type: none;
+	transition: height 0.4s ease;
+}
+.submenu li {
+	border-bottom: 1px solid white;
+}
+.submenu a {
+	display: block;
+	text-decoration: none;
+	color: #002b5c;
+	padding: 12px;
+	padding-left: 42px;
+	transition: all 0.25s ease-in-out;
+}
+.submenu a:hover {
+	background: #4a81d8;
+	color: #fff;
+}
