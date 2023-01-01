@@ -33,7 +33,6 @@ export class AuthenticationService {
                         expiration: moment().add(1, 'days').toDate(),
                         fullName: 'John Doe'
                     }));
-
                     return true;
                 }));
     }

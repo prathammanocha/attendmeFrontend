@@ -39,6 +39,7 @@ table {
 .mat-form-field {
     width: 35%;
     display: inline-block;
+    margin-left: 58%;
     font-family: "Open Sans", sans-serif;
 }
 

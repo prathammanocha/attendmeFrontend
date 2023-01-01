@@ -4,16 +4,16 @@ import { ApiService } from '../../../services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.component';
+import { StudentlistdialogComponent } from 'src/app/studentlistdialog/studentlistdialog.component';
 
 @Component({
-  selector: 'app-visitor-list',
-  templateUrl: './visitor-list.component.html',
-  styleUrls: ['./visitor-list.component.css']
+  selector: 'app-student-list',
+  templateUrl: './student-list.component.html',
+  styleUrls: ['./student-list.component.css']
 })
-export class VisitorListComponent implements OnInit {
+export class StudentListComponent implements OnInit {
 
-  displayedColumns: string[] = ['FirstName','LastName', 'CompanyName', 'Phone', 'Email','VisitorType', 'Actions'];
+  displayedColumns: string[] = ['FirstName','LastName', 'HomeGroup', 'Actions'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private dialog: MatDialog, private api: ApiService) { }
@@ -26,7 +26,7 @@ export class VisitorListComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(TeacherdialogComponent, {
+    this.dialog.open(StudentlistdialogComponent, {
       width:'40%'
     }).afterClosed().subscribe(val=>{
       if(val=='Saved'){
@@ -50,7 +50,7 @@ export class VisitorListComponent implements OnInit {
   }
 
   editTeacher(row : any){
-    this.dialog.open(TeacherdialogComponent, {
+    this.dialog.open(StudentlistdialogComponent, {
       width:'30%',
       data:row
     }

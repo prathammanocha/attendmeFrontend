@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class TeacherdialogComponent implements OnInit {
 
   teacherForm!: FormGroup;
-  actionBtn : string = "Save";
+  actionBtn : string = "OK";
   constructor(private formBuilder: FormBuilder, 
     private api: ApiService, 
     @Inject(MAT_DIALOG_DATA) public editData : any,

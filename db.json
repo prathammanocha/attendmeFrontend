@@ -8,7 +8,9 @@
       "id": 1
     }
   ],
-  "visitorList": [],
+  "visitorList": [
+    {}
+  ],
   "logindetails": [
     {
       "username": "Pratham",
@@ -17,88 +19,20 @@
   ],
   "teacherlist": [
     {
-      "teacherName": "Pratham",
-      "teacherID": "pratham.manocha19@GMAIL.COM",
-      "departmentName": "Gatton House",
-      "gender": "Female",
-      "id": "3"
+      "FirstName": "rsada",
+      "LastName": "rsada",
+      "CompanyName": "asdad",
+      "Phone": "9810841257",
+      "Email": "pratham.manocha19@gmail.com",
+      "VisitorType": "guest"
     },
     {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "id": "2",
-      "teacherName": "rsada",
-      "teacherID": "asdad",
-      "departmentName": "Gatton House",
-      "gender": "Male"
-    },
-    {
-      "teacherName": "pratham",
-      "teacherID": "david@eait.edu.au",
-      "departmentName": "Gatton House",
-      "gender": "Male",
-      "id": "qZYdULe"
-    },
-    {
-      "teacherName": "sankas",
-      "teacherID": "sadnasjkndjkasd",
-      "departmentName": "St Lucia",
-      "gender": "Female",
-      "id": "l-iYycD"
+      "FirstName": "rsada",
+      "LastName": "rsada",
+      "CompanyName": "asdad",
+      "Phone": "9810841257",
+      "Email": "pratham.manocha19@gmail.com",
+      "VisitorType": "guest"
     }
   ]
 }

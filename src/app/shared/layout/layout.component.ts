@@ -31,7 +31,7 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         active: false,
         submenu: [
           { name: 'Visitor List', url: 'http://localhost:4200/visitors/visitorlist' },
-          { name: 'Visitor Log', url: 'http://localhost:4200/teachers/visitorlog' },
+          { name: 'Visitor Log', url: 'http://localhost:4200/visitors/visitorlog' },
         ]
       },
       { 
@@ -39,10 +39,10 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'keyboard_arrow_down',
         active: false,
         submenu: [
-          { name: 'Student List', url: 'http://localhost:4200/dashboard/studentlist' },
-          { name: 'Student Log', url: 'http://localhost:4200/dashboard/studentlist' },
-          { name: 'Parents', url: 'http://localhost:4200/dashboard/studentlist' },
-          { name: 'Relatives', url: 'http://localhost:4200/dashboard/studentlist' },
+          { name: 'Student List', url: 'http://localhost:4200/students/studentlist' },
+          { name: 'Student Log', url: 'http://localhost:4200/students/studentlist' },
+          { name: 'Parents', url: 'http://localhost:4200/students/studentlist' },
+          { name: 'Relatives', url: 'http://localhost:4200/students/studentlist' },
         ]
       },
       { 

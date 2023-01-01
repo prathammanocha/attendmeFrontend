@@ -12,6 +12,10 @@ import { YesNoPipe } from './pipes/yes-no.pipe';
 import { LayoutComponent } from './layout/layout.component';
 import { TeacherdialogComponent } from '../teacherdialog/teacherdialog.component';
 import { MenuComponent } from './menu/menu.component';
+import { VisitorLogDialogComponent } from '../visitorlogdialog/visitorlogdialog.component';
+import { NgxPrintModule } from 'ngx-print';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { StudentlistdialogComponent } from '../studentlistdialog/studentlistdialog.component';
 
 @NgModule({
     imports: [
@@ -20,6 +24,8 @@ import { MenuComponent } from './menu/menu.component';
         FormsModule,
         ReactiveFormsModule,
         FlexLayoutModule,
+        NgxPrintModule,
+        MatCheckboxModule,
     ],
     declarations: [
         ConfirmDialogComponent,
@@ -30,6 +36,8 @@ import { MenuComponent } from './menu/menu.component';
         LayoutComponent,
         TeacherdialogComponent,
         MenuComponent,
+        VisitorLogDialogComponent,
+        StudentlistdialogComponent,
     ],
     exports: [
         FormsModule,

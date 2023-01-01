@@ -1,19 +1,21 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../../services/api.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.component';
+import { VisitorLogDialogComponent } from 'src/app/visitorlogdialog/visitorlogdialog.component';
 
 @Component({
   selector: 'app-visitor-log',
   templateUrl: './visitor-log.component.html',
   styleUrls: ['./visitor-log.component.css']
 })
+
 export class VisitorLogComponent implements OnInit {
 
-  displayedColumns: string[] = ['id','teacherName', 'teacherID', 'departmentName', 'gender','actions'];
+  displayedColumns: string[] = ['FirstName','LastName', 'CompanyName', 'Email', 'Phone', 'In Date-Time', 'Out Date-Time', 'Actions'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private dialog: MatDialog, private api: ApiService) { }
@@ -26,7 +28,7 @@ export class VisitorLogComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(TeacherdialogComponent, {
+    this.dialog.open(VisitorLogDialogComponent, {
       width:'30%'
     }).afterClosed().subscribe(val=>{
       if(val=='Saved'){
@@ -35,7 +37,7 @@ export class VisitorLogComponent implements OnInit {
     })
   }
 
-  getAllTeacher(){
+  getAllTeacher() {
       this.api.getTeacher()
       .subscribe({
         next:(res)=>{
@@ -43,32 +45,10 @@ export class VisitorLogComponent implements OnInit {
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         },
-        error:()=>{
-          alert("Sorry, Some Error Occured while adding the Teacher");
-        }
+        // error:()=>{
+        //   alert("Sorry, Some Error Occured while adding the Teacher");
+        // }
       })
-  }
-  editTeacher(row : any){
-    this.dialog.open(TeacherdialogComponent, {
-      width:'30%',
-      data:row
-    }
-    ).afterClosed().subscribe(val=>{
-      if(val==='update'){
-        this.getAllTeacher();
-      }
-    })
-  }
-  deleteTeacher(id: number){
-    this.api.deleteTeacher(id)
-    .subscribe({
-      next:(res)=>{
-        alert("Product deleted successfully")
-      },
-      error:()=>{
-        alert("Error while Deleting")
-      }
-    })
   }
 
   applyFilter(event: Event) {
