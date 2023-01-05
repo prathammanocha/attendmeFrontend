@@ -27,14 +27,11 @@ export class VisitorLogComponent implements OnInit {
     this.getAllTeacher();
   }
 
-  openDialog() {
+  openDialog(data:string, data2:string) {
+    this.api.putCompanyName(data2);
+    this.api.putDataToStream(data);
     this.dialog.open(VisitorLogDialogComponent, {
-      width:'30%'
-    }).afterClosed().subscribe(val=>{
-      if(val=='Saved'){
-        this.getAllTeacher
-      }
-    })
+      width:'40%' })
   }
 
   getAllTeacher() {

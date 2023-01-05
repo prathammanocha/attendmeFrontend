@@ -2,19 +2,20 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 @Component({
-  selector: 'app-teacherdialog',
-  templateUrl: './teacherdialog.component.html',
-  styleUrls: ['./teacherdialog.component.css']
+  selector: 'app-addstudentdialog',
+  templateUrl: './addstudentdialog.component.html',
+  styleUrls: ['./addstudentdialog.component.css']
 })
-export class TeacherdialogComponent implements OnInit {
+export class addstudentDialogComponent implements OnInit{
 
   teacherForm!: FormGroup;
   actionBtn : string = "OK";
   constructor(private formBuilder: FormBuilder, 
     private api: ApiService, 
     @Inject(MAT_DIALOG_DATA) public editData : any,
-    private dialogRef: MatDialogRef<TeacherdialogComponent>) { }
+    private dialogRef: MatDialogRef<addstudentDialogComponent>) { }
 
   ngOnInit(): void {
     this.teacherForm = this.formBuilder.group({
@@ -64,4 +65,5 @@ updateTeacher(){
     }
   })
 }
+
 }

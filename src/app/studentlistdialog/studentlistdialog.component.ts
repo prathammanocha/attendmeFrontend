@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 @Component({
   selector: 'app-teacherdialog',
   templateUrl: './studentlistdialog.component.html',
-  styleUrls: ['./studentlistdialog.component.scss']
+  styleUrls: ['./studentlistdialog.component.css']
 })
 export class StudentlistdialogComponent implements OnInit {
 

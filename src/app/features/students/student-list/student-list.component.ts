@@ -4,7 +4,7 @@ import { ApiService } from '../../../services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { StudentlistdialogComponent } from 'src/app/studentlistdialog/studentlistdialog.component';
+import { addstudentDialogComponent } from 'src/app/addstudentdialog/addstudentdialog.component';
 
 @Component({
   selector: 'app-student-list',
@@ -26,7 +26,7 @@ export class StudentListComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(StudentlistdialogComponent, {
+    this.dialog.open(addstudentDialogComponent, {
       width:'40%'
     }).afterClosed().subscribe(val=>{
       if(val=='Saved'){
@@ -50,7 +50,7 @@ export class StudentListComponent implements OnInit {
   }
 
   editTeacher(row : any){
-    this.dialog.open(StudentlistdialogComponent, {
+    this.dialog.open(addstudentDialogComponent, {
       width:'30%',
       data:row
     }

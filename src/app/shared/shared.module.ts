@@ -16,6 +16,7 @@ import { VisitorLogDialogComponent } from '../visitorlogdialog/visitorlogdialog.
 import { NgxPrintModule } from 'ngx-print';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { StudentlistdialogComponent } from '../studentlistdialog/studentlistdialog.component';
+import { addstudentDialogComponent } from '../addstudentdialog/addstudentdialog.component';
 
 @NgModule({
     imports: [
@@ -38,6 +39,7 @@ import { StudentlistdialogComponent } from '../studentlistdialog/studentlistdial
         MenuComponent,
         VisitorLogDialogComponent,
         StudentlistdialogComponent,
+        addstudentDialogComponent,
     ],
     exports: [
         FormsModule,

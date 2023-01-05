@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,27 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
   constructor(private http : HttpClient) {}
+
+    private _datastream = new BehaviorSubject("");
+
+    getDataStream(){
+      return this._datastream.asObservable();
+    }
+
+    putDataToStream(data: string){
+      this._datastream.next(data)
+    }
+
+    private _companyname = new BehaviorSubject("");
+
+    getCompanyName(){
+      return this._companyname.asObservable();
+    }
+
+    putCompanyName(data: string){
+      this._companyname.next(data)
+    }
+
 
     postStudent(data : any){
       return this.http.post<any>("http://localhost:3000/studentList/", data);

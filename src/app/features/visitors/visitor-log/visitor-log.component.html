@@ -62,7 +62,7 @@
           <ng-container matColumnDef="Actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
             <td mat-cell *matCellDef="let row"> 
-              <button mat-icon-button (click)="openDialog()">
+              <button mat-icon-button (click)="openDialog(row.FirstName + ' ' + row.LastName, row.CompanyName)">
                 <mat-icon fontSet="material-icons-outlined">label</mat-icon>
               </button>
             </td>

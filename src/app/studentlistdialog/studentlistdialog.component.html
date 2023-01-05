@@ -1,10 +1,15 @@
-<h1 mat-dialog-title>Link Parent/Relative</h1>
-<div mat-dialog-content>
-    <div class = "searchfield">
+<mat-card-header>
+      <mat-card-title>
+        Link Parent/Relative
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <div mat-dialog-content>
+        <br/>
         <button mat-raised-button color="primary" (click) = "openDialog()" class = "addStudentBtn">Link New Relation</button>
-    </div>
-
-      <table mat-table [dataSource]="dataSource" matSort>
+        <br/>
+        <br/>
+        <table mat-table [dataSource]="dataSource" matSort>
 
         <ng-container matColumnDef="FirstName" >
           <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
@@ -49,7 +54,8 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-</div>
+    </div>
+</mat-card-content>
 <div mat-dialog-action [align]="'end'">
     <button style="background-color: #3269B1; color:white;" mat-raised-button>{{actionBtn}}</button>
     <button style="margin-left: 8px; background-color:#f99d1c;" mat-raised-button color="warn" mat-dialog-close>Cancel</button>

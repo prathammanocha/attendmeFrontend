@@ -1,11 +1,20 @@
 <div>
-  <div id="mytodosItemsId">
-    <img src="https://i.ibb.co/RD0Q9cN/Screenshot-2022-12-28-at-1-01-06-PM.png" alt="Screenshot-2022-12-28-at-1-01-06-PM" width="400px">
-    <div >
-      Pratham Manocha
-      <hr/>
-      
+  <div id="printme">
+    <img src="https://i.ibb.co/RD0Q9cN/Screenshot-2022-12-28-at-1-01-06-PM.png" alt="Screenshot-2022-12-28-at-1-01-06-PM" width="500px">
+    <div class="name">
+      {{name}}
     </div>
+    <div class="companyname">
+      {{companyname}}
+    </div>
+    <br/>
+    <div class="purpose">
+      Visiting : Test
+    </div>
+    <div class="Time">
+      Time : 18/12/2000 18:33:00
+    </div>
+    <hr/>
   </div>
-  <button mat-raised-button color="primary" class = "printBtn"  printSectionId="mytodosItemsId" ngxPrint >Print</button>
+  <button mat-raised-button color="primary" class = "printBtn"  printSectionId="printme" ngxPrint >Print</button>
 </div>
