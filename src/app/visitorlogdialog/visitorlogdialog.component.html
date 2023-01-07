@@ -16,5 +16,8 @@
     </div>
     <hr/>
   </div>
-  <button mat-raised-button color="primary" class = "printBtn"  printSectionId="printme" ngxPrint >Print</button>
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary" style="background-color: #3269B1; color:white; width: 75px!important;" printSectionId="printme" ngxPrint >Print</button>
+    <button style="margin-left: 8px; background-color:#f99d1c;" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
 </div>
