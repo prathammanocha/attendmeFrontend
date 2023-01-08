@@ -30,8 +30,8 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'keyboard_arrow_down',
         active: false,
         submenu: [
-          { name: 'Visitor List', url: 'http://34.121.4.22/visitors/visitorlist' },
-          { name: 'Visitor Log', url: 'http://34.121.4.22/visitors/visitorlog' },
+          { name: 'Visitor List', url: '/visitors/visitorlist' },
+          { name: 'Visitor Log', url: '/visitors/visitorlog' },
         ]
       },
       { 
@@ -39,10 +39,10 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'keyboard_arrow_down',
         active: false,
         submenu: [
-          { name: 'Student List', url: 'http://34.121.4.22/students/studentlist' },
-          { name: 'Student Log', url: 'http://34.121.4.22/students/studentlist' },
-          { name: 'Parents', url: 'http://localhost:4200/students/studentlist' },
-          { name: 'Relatives', url: 'http://localhost:4200/students/studentlist' },
+          { name: 'Student List', url: '/students/studentlist' },
+          { name: 'Student Log', url: '/students/studentlist' },
+          { name: 'Parents', url: '/students/studentlist' },
+          { name: 'Relatives', url: '/students/studentlist' },
         ]
       },
       { 
@@ -50,8 +50,8 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'keyboard_arrow_down',
         active: false,
         submenu: [
-          { name: 'Teacher List', url: 'http://localhost:4200/teachers/teacherlist' },
-          { name: 'Teacher Log', url: 'http://localhost:4200/teachers/teacherlog' },
+          { name: 'Teacher List', url: '/teachers/teacherlist' },
+          { name: 'Teacher Log', url: '/teachers/teacherlog' },
         ]
       },
       { 
@@ -59,11 +59,11 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'home',
         active: false,
         submenu: [
-          { name: 'Pickup/Drop off Reasons', url: 'http://localhost:4200/customers' },
-          { name: 'Visitor Types', url: 'http://localhost:4200/dashboard/teacherlist' },
-          { name: 'Parent Types', url: 'http://localhost:4200/dashboard/teacherlist' },
-          { name: 'Relative Types', url: 'http://localhost:4200/dashboard/teacherlist' },
-          { name: 'Incident', url: 'http://localhost:4200/dashboard/teacherlist' },
+          { name: 'Pickup/Drop off Reasons', url: '/customers' },
+          { name: 'Visitor Types', url: '/dashboard/teacherlist' },
+          { name: 'Parent Types', url: '/dashboard/teacherlist' },
+          { name: 'Relative Types', url: '/dashboard/teacherlist' },
+          { name: 'Incident', url: '/dashboard/teacherlist' },
         ]
       },
       { 
@@ -71,8 +71,8 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         iconClass: 'home',
         active: false,
         submenu: [
-          { name: 'User Information', url: 'http://localhost:4200/customers' },
-          { name: 'Password  Reset', url: 'http://localhost:4200/dashboard/teacherlist' },
+          { name: 'User Information', url: '/customers' },
+          { name: 'Password  Reset', url: '/dashboard/teacherlist' },
         ]
       },  
     ];
