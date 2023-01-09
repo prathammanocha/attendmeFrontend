@@ -44,21 +44,35 @@ export class LoginComponent implements OnInit {
         this.errormessage = false;
         const data = {userName: username, password: password};
         const body = JSON.stringify(data);
-        const httpOptions = {
-            headers: new HttpHeaders({'Content-Type': 'application/json'})
-          }
-        this.http.post('https://localhost:5001/api/AccountUser/Authenticate/', body, httpOptions)
+        // const httpOptions = {
+        //     headers: new HttpHeaders({'Content-Type': 'application/json'})
+        //   }
+        // this.http.post('https://localhost:5001/api/AccountUser/Authenticate/', body, httpOptions)
+        // .subscribe(
+        //     (res) => {
+        //         console.log(res);
+        //         if(res == null) {
+        //             this.router.navigate(['/dashboard']);
+        //         }
+        //     },
+        //     (error) => {
+        //         this.loading = false;
+        //         this.errormessage = true;
+        //     }
+        // );
+        this.http.get<any>("http://localhost:3000/logindetails")
         .subscribe(
             (res) => {
-                console.log(res);
-                if(res == null) {
+                const user = res.find((a:any)=>{
+                return a.username === username && a.password === password });
+                if(user){
                     this.router.navigate(['/dashboard']);
                 }
-            },
-            (error) => {
-                this.loading = false;
-                this.errormessage = true;
-            }
+        },
+        (error) => {
+                    this.loading = false;
+                    this.errormessage = true;
+                }
         );
     }
 
