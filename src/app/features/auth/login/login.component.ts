@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         //         this.errormessage = true;
         //     }
         // );
-        this.http.get<any>("http://localhost:3000/logindetails")
+        this.http.get<any>("http://34.121.4.22:3000/logindetails")
         .subscribe(
             (res) => {
                 const user = res.find((a:any)=>{

@@ -34,7 +34,7 @@ export class ApiService {
       return this.http.post<any>("http://localhost:3000/studentList/", data);
     }
     getStudent( ){
-      return this.http.get<any>("http://localhost:3000/studentList/");
+      return this.http.get<any>("http://34.121.4.22:3000/studentList/");
     }
     putStudent(data:any, id: number){
       return this.http.put<any>("http://localhost:3000/studentList/"+id, data);
@@ -47,7 +47,7 @@ export class ApiService {
       return this.http.post<any>("http://localhost:3000/teacherlist/", data2);
     }
     getTeacher( ){
-      return this.http.get<any>("http://localhost:3000/teacherlist/");
+      return this.http.get<any>("http://34.121.4.22:3000/teacherlist/");
     }
     putTeacher(data2 :any, id2: number){
       return this.http.put<any>("http://localhost:3000/teacherlist/"+id2, data2);
