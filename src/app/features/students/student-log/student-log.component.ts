@@ -14,7 +14,7 @@ import { VisitorLogDialogComponent } from 'src/app/visitorlogdialog/visitorlogdi
 
 export class StudentLogComponent implements OnInit {
 
-  displayedColumns: string[] = ['FirstName','LastName', 'CompanyName', 'Email', 'Phone', 'In Date-Time', 'Out Date-Time', 'Actions'];
+  displayedColumns: string[] = ['FirstName','LastName', 'HomeGroup', 'LogType', 'Reason', 'Relation', 'fName', 'lName', 'LogDate', 'Actions'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private dialog: MatDialog, private api: ApiService) { }

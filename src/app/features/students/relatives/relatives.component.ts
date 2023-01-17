@@ -6,15 +6,16 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { StudentlistdialogComponent } from 'src/app/studentlistdialog/studentlistdialog.component';
 import { addstudentDialogComponent } from 'src/app/addstudentdialog/addstudentdialog.component';
+import { RelativesdialogComponent } from 'src/app/relativesdialog/relativesdialog.component';
 
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
+  selector: 'app-relatives',
+  templateUrl: './relatives.component.html',
+  styleUrls: ['./relatives.component.css']
 })
-export class StudentListComponent implements OnInit {
+export class RelativesComponent implements OnInit {
 
-  displayedColumns: string[] = ['FirstName','LastName', 'HomeGroup', 'Actions'];
+  displayedColumns: string[] = ['FirstName','LastName', 'Company', 'Phone', 'Email', 'Workingwc', 'ChildSafety', 'VDS', 'Actions'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private dialog: MatDialog, private api: ApiService) { }
@@ -26,18 +27,8 @@ export class StudentListComponent implements OnInit {
     this.getAllTeacher();
   }
 
-  openDialog() {
-    this.dialog.open(StudentlistdialogComponent, {
-      width:'70%'
-    }).afterClosed().subscribe(val=>{
-      if(val=='Saved'){
-        this.getAllTeacher
-      }
-    })
-  }
-
   openDialog2() {
-    this.dialog.open(addstudentDialogComponent, {
+    this.dialog.open(RelativesdialogComponent, {
       width:'40%'
     }).afterClosed().subscribe(val=>{
       if(val=='Saved'){

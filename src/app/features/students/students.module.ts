@@ -4,6 +4,8 @@ import { StudentsRoutingModule } from './students-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentLogComponent } from './student-log/student-log.component';
+import { ParentsComponent } from './parents/parents.component';
+import { RelativesComponent } from './relatives/relatives.component';
 
 @NgModule({
     imports: [
@@ -13,7 +15,9 @@ import { StudentLogComponent } from './student-log/student-log.component';
     ],
     declarations: [
         StudentListComponent,
-        StudentLogComponent
+        StudentLogComponent,
+        ParentsComponent,
+        RelativesComponent
     ]
 })
 export class StudentsModule { }

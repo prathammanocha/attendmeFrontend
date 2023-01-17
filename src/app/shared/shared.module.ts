@@ -17,6 +17,10 @@ import { NgxPrintModule } from 'ngx-print';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { StudentlistdialogComponent } from '../studentlistdialog/studentlistdialog.component';
 import { addstudentDialogComponent } from '../addstudentdialog/addstudentdialog.component';
+import { StudentlistdetailsComponent } from '../studentdetailsdialog /studentlistdetails.component';
+import { ParentsdialogComponent } from '../parentsdialog/parentsdialog.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { RelativesdialogComponent } from '../relativesdialog/relativesdialog.component';
 
 @NgModule({
     imports: [
@@ -27,6 +31,7 @@ import { addstudentDialogComponent } from '../addstudentdialog/addstudentdialog.
         FlexLayoutModule,
         NgxPrintModule,
         MatCheckboxModule,
+        MatRadioModule,
     ],
     declarations: [
         ConfirmDialogComponent,
@@ -40,6 +45,9 @@ import { addstudentDialogComponent } from '../addstudentdialog/addstudentdialog.
         VisitorLogDialogComponent,
         StudentlistdialogComponent,
         addstudentDialogComponent,
+        StudentlistdetailsComponent,
+        ParentsdialogComponent,
+        RelativesdialogComponent
     ],
     exports: [
         FormsModule,

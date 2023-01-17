@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Add Parents Information</h1>
+<div mat-dialog-content>
+<form [formGroup]="teacherForm">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="teacherName" placeholder="Enter Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="teacherName" placeholder="Enter Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input matInput formControlName="teacherID" placeholder="Enter Teacher Email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="teacherID" placeholder="Enter Teacher Email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input matInput formControlName="teacherName" placeholder="Enter Name">
+    </mat-form-field>
+    <mat-radio-group>
+        <mat-radio-button value="1">Father</mat-radio-button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-radio-button value="2">Mother</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+    <br/>
+    <mat-checkbox formControlName="pepperoni">Terms & Conditions accepted</mat-checkbox>
+</form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button style="background-color: #3269B1; color:white; width: 75px!important;" mat-raised-button (click) = "addTeacher()">{{actionBtn}}</button>
+    <button style="margin-left: 8px; background-color:#f99d1c;" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+</div>

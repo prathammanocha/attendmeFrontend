@@ -40,9 +40,9 @@ export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         active: false,
         submenu: [
           { name: 'Student List', url: '/students/studentlist' },
-          { name: 'Student Log', url: '/students/studentlist' },
-          { name: 'Parents', url: '/students/studentlist' },
-          { name: 'Relatives', url: '/students/studentlist' },
+          { name: 'Student Log', url: '/students/studentlog' },
+          { name: 'Parents', url: '/students/parents' },
+          { name: 'Relatives', url: '/students/relatives' },
         ]
       },
       { 
