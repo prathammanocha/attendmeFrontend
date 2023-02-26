@@ -37,9 +37,8 @@ table {
 }
 
 .mat-form-field {
-    width: 35%;
+    width: 32%;
     display: inline-block;
-    margin-left: 58%;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -48,6 +47,7 @@ table {
     background-color: #3269B1;
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
+    margin-left: 58%;
 }
 
 .mat-row:nth-child(odd){
@@ -60,4 +60,8 @@ table {
 
 .deleteButton {
     color: #EE9E3A;
+}
+
+.visitorType {
+    margin-left: -40%;
 }

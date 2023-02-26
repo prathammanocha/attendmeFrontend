@@ -8,56 +8,57 @@
       </mat-card-header>
       <mat-card-content>
         <div class = "searchfield">
-          <button mat-raised-button color="primary" (click) = "openDialog()" class = "addStudentBtn">Add Visitor</button>
           <mat-form-field appearance="standard">
             <mat-label>Search</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
           </mat-form-field>
+          <button mat-raised-button color="primary" (click) = "openDialog()" class = "addStudentBtn">Add Visitor</button>
         </div>
 
         <table mat-table [dataSource]="dataSource" matSort>
 
-          <ng-container matColumnDef="FirstName" >
+          <ng-container matColumnDef="firstName" >
             <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.FirstName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
           </ng-container>
           <!-- Student Name -->
-          <ng-container matColumnDef="LastName">
+          <ng-container matColumnDef="lastName">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.LastName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
           </ng-container>
   
           <!-- Student ID -->
-          <ng-container matColumnDef="CompanyName">
+          <ng-container matColumnDef="companyName">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.CompanyName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.companyName}} </td>
           </ng-container>
   
           <!-- College Name -->
-          <ng-container matColumnDef="Phone">
+          <ng-container matColumnDef="contactPhone">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-            <td mat-cell *matCellDef="let row"> {{row.Phone}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.contactPhone}} </td>
           </ng-container>
   
           <!-- Gender -->
-          <ng-container matColumnDef="Email">
+          <ng-container matColumnDef="contactEmail">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-            <td mat-cell *matCellDef="let row"> {{row.Email}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.contactEmail}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="VisitorType">
+          <ng-container matColumnDef="patronTypeId">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Visitor Type </th>
-            <td mat-cell *matCellDef="let row"> {{row.VisitorType}} </td>
+            <td mat-cell *matCellDef="let row" >{{row.patronTypeId}}</td>
           </ng-container>
+
   
           <!-- Actions Button -->
           <ng-container matColumnDef="Actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
             <td mat-cell *matCellDef="let row"> 
-              <button mat-icon-button (click)="editTeacher(row)">
+              <button mat-icon-button (click)="editTeacher(row)" matTooltip="edit record">
                 <mat-icon fontSet="material-icons-outlined">edit</mat-icon>
               </button>
-              <button mat-icon-button (click)="deleteTeacher(row.id)">
+              <button mat-icon-button (click)="deleteTeacher(row.id)" matTooltip="delete record">
                 <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
               </button>
             </td>

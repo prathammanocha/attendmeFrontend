@@ -5,6 +5,10 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.component';
+import { AuthenticationService } from 'src/app/core/services/auth.service';
+import { VisitorList } from 'src/app/core/models/visitors';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { RelativeList } from '../../../core/models/relativetypes';
 
 @Component({
   selector: 'app-visitor-list',
@@ -13,16 +17,23 @@ import {TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.compo
 })
 export class VisitorListComponent implements OnInit {
 
-  displayedColumns: string[] = ['FirstName','LastName', 'CompanyName', 'Phone', 'Email','VisitorType', 'Actions'];
-  dataSource!: MatTableDataSource<any>;
+  displayedColumns: string[] = ['firstName', 'lastName', 'companyName', 'contactPhone', 'contactEmail','patronTypeId', 'Actions'];
+  visitors!: VisitorList[];
+  
+  dataSource = new MatTableDataSource<VisitorList>
+  currentUser: any;
+  token!: string;
+  relatives!: RelativeList[];
 
-  constructor(private dialog: MatDialog, private api: ApiService) { }
+  constructor(private dialog: MatDialog, private api: ApiService, private authService: AuthenticationService, private http:HttpClient) { }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser();
     this.getAllTeacher();
+    this.getAllTypes();
   }
 
   openDialog() {
@@ -30,22 +41,37 @@ export class VisitorListComponent implements OnInit {
       width:'40%'
     }).afterClosed().subscribe(val=>{
       if(val=='Saved'){
-        this.getAllTeacher
+        this.getAllTeacher();
       }
     })
   }
 
+  getAllTypes() {
+    this.authService.getTypes(this.currentUser.token).subscribe({
+      next:(res: any)=>{
+      this.relatives = res.body.result;
+      console.log(this.relatives);
+    },
+    error:()=>{
+      alert("Sorry, Some Error Occured while adding the Visitor");
+    }
+  })
+  }
+
   getAllTeacher(){
-      this.api.getTeacher()
+     this.token = this.currentUser.token;
+     this.authService.getAllVisitors(this.token)
       .subscribe({
-        next:(res)=>{
-          this.dataSource = new MatTableDataSource(res);
+        next:(res: any)=>{
+          console.log(res.body);
+          this.visitors = res.body.result;
+          this.dataSource = new MatTableDataSource<VisitorList>(this.visitors);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         },
-        // error:()=>{
-        //   alert("Sorry, Some Error Occured while adding the Teacher");
-        // }
+        error:()=>{
+          alert("Sorry, Some Error Occured while adding the Visitor");
+        }
       })
   }
 
@@ -60,16 +86,22 @@ export class VisitorListComponent implements OnInit {
       }
     })
   }
+
   deleteTeacher(id: number){
-    this.api.deleteTeacher(id)
-    .subscribe({
-      next:(res)=>{
-        alert("Product deleted successfully")
+    if(confirm("Are you sure you want to delete?")) {
+      this.http.post<any>('https://localhost:5001/api/Visitor/Delete?visitorId='+id, '',   
+      {headers: new HttpHeaders({
+        'content-type': 'application/json' }), observe: 'response'})
+      .subscribe({
+      next:(response)=>{
+        alert("Visitor deleted successfully")
+        this.getAllTeacher();
       },
       error:()=>{
         alert("Error while Deleting")
       }
     })
+  }
   }
 
   applyFilter(event: Event) {

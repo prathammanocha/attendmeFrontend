@@ -71,13 +71,15 @@ export class StudentListComponent implements OnInit {
       }
     })
   }
+
   deleteTeacher(id: number){
     this.api.deleteTeacher(id)
     .subscribe({
       next:(res)=>{
         alert("Product deleted successfully")
       },
-      error:()=>{
+      error:(err)=>{
+        console.log(err);
         alert("Error while Deleting")
       }
     })

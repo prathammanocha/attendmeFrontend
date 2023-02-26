@@ -11,13 +11,13 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
                         <input matInput placeholder="Username" formControlName="username">
-                        <mat-error>This field is required</mat-error>
+                        <mat-error *ngIf="usernameflag">This field is required</mat-error>
                     </mat-form-field>
                     <br/>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput type="password" placeholder="Password" formControlName="password">
-                        <mat-error>This field is required</mat-error>
+                        <mat-error *ngIf="passwordflag">This field is required</mat-error>
                     </mat-form-field>
                     <br/>
                     <br/>

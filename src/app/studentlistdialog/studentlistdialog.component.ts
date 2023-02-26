@@ -51,9 +51,9 @@ export class StudentlistdialogComponent implements OnInit {
             this.dataSource.paginator = this.paginator;
             this.dataSource.sort = this.sort;
           },
-          // error:()=>{
-          //   alert("Sorry, Some Error Occured while adding the Teacher");
-          // }
+          error:()=>{
+            alert("Sorry, Some Error Occured while adding the Teacher");
+          }
         })
     }
   

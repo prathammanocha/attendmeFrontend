@@ -29,6 +29,15 @@ export class ApiService {
       this._companyname.next(data)
     }
 
+    private _companyname1 = new BehaviorSubject("");
+
+    getCompanyName1(){
+      return this._companyname1.asObservable();
+    }
+
+    putCompanyName1(data: string){
+      this._companyname1.next(data)
+    }
 
     postStudent(data : any){
       return this.http.post<any>("http://localhost:3000/studentList/", data);

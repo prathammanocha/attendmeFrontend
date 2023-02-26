@@ -5,6 +5,8 @@ import { Title } from '@angular/platform-browser';
 import { AuthenticationService } from 'src/app/core/services/auth.service';
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs';
+
 
 @Component({
     selector: 'app-login',
@@ -17,6 +19,8 @@ export class LoginComponent implements OnInit {
     loading!: boolean;
     errormessage!: boolean;
     form!: UntypedFormGroup;
+    usernameflag:boolean = false;
+    passwordflag:boolean = false;
 
     constructor(private router: Router,
         private titleService: Title,
@@ -24,8 +28,11 @@ export class LoginComponent implements OnInit {
         private authenticationService: AuthenticationService, private http: HttpClient) {
     }
 
+    
+
     ngOnInit() {
-        this.titleService.setTitle('angular-material-template - Login');
+        
+        this.titleService.setTitle('Attendme-Login');
         this.authenticationService.logout();
         const savedUserEmail = localStorage.getItem('savedUserEmail');
 
@@ -44,38 +51,48 @@ export class LoginComponent implements OnInit {
         this.errormessage = false;
         const data = {userName: username, password: password};
         const body = JSON.stringify(data);
-        // const httpOptions = {
-        //     headers: new HttpHeaders({'Content-Type': 'application/json'})
-        //   }
-        // this.http.post('https://localhost:5001/api/AccountUser/Authenticate/', body, httpOptions)
+        this.http.post<any>('https://localhost:5001/api/User/Authenticate', body,   
+        {headers: new HttpHeaders({
+          'content-type': 'application/json' }), observe: 'response'})
+        .subscribe({
+           next : (response) => {
+            console.log(response.body.result);
+            this.authenticationService.login(response.body.result, username);
+            this.router.navigate(['/dashboard']);
+          },
+           error : (err) => {
+            console.log(err);
+            this.loading = false;
+            this.errormessage = true;
+           }
+          });
+        // this.http.get<any>("http://localhost:3000/logindetails")
         // .subscribe(
         //     (res) => {
-        //         console.log(res);
-        //         if(res == null) {
+        //         const user = res.find((a:any)=>{
+        //         return a.username === username && a.password === password });
+        //         if(user){
         //             this.router.navigate(['/dashboard']);
+        //         } else {
+        //             this.loading = false;
+        //             this.errormessage = true;
+        //             if(username === "") {
+        //                 this.usernameflag = true;
+        //             }
+        //             if(password === ""){
+        //                 this.passwordflag = true;
+        //             }
         //         }
-        //     },
-        //     (error) => {
-        //         this.loading = false;
-        //         this.errormessage = true;
-        //     }
+        // },
+        // (error) => {
+        //             this.loading = false;
+        //             this.errormessage = true;
+        //         }
         // );
-        this.http.get<any>("http://34.121.4.22:3000/logindetails")
-        .subscribe(
-            (res) => {
-                const user = res.find((a:any)=>{
-                return a.username === username && a.password === password });
-                if(user){
-                    this.router.navigate(['/dashboard']);
-                }
-        },
-        (error) => {
-                    this.loading = false;
-                    this.errormessage = true;
-                }
-        );
     }
-
+    
+      
+     
     resetPassword() {
         this.router.navigate(['/auth/password-reset-request']);
     }
