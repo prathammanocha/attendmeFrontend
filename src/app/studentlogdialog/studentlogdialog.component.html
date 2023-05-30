@@ -1,0 +1,23 @@
+<div>
+  <div id="printme">
+    <img src="https://i.ibb.co/RD0Q9cN/Screenshot-2022-12-28-at-1-01-06-PM.png" alt="Screenshot-2022-12-28-at-1-01-06-PM" width="500px">
+    <div class="name">
+      {{name}}
+    </div>
+    <div class="companyname">
+      {{companyname}}
+    </div>
+    <br/>
+    <div class="purpose">
+      Visiting : Test
+    </div>
+    <div class="Time">
+      Time : 18/12/2000 18:33:00
+    </div>
+    <hr/>
+  </div>
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary" style="background-color: #3269B1; color:white; width: 75px!important;" printSectionId="printme" ngxPrint >Print</button>
+    <button style="margin-left: 8px; background-color:#f99d1c;" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+</div>

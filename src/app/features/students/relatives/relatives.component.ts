@@ -1,11 +1,9 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../../services/api.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import { StudentlistdialogComponent } from 'src/app/studentlistdialog/studentlistdialog.component';
-import { addstudentDialogComponent } from 'src/app/addstudentdialog/addstudentdialog.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { RelativesdialogComponent } from 'src/app/relativesdialog/relativesdialog.component';
 
 @Component({
@@ -38,7 +36,7 @@ export class RelativesComponent implements OnInit {
   }
 
   getAllTeacher(){
-      this.api.getTeacher()
+      this.api.getRelatives()
       .subscribe({
         next:(res)=>{
           this.dataSource = new MatTableDataSource(res);
@@ -52,7 +50,7 @@ export class RelativesComponent implements OnInit {
   }
 
   editTeacher(row : any){
-    this.dialog.open(StudentlistdialogComponent, {
+    this.dialog.open(RelativesdialogComponent, {
       width:'30%',
       data:row
     }
@@ -63,7 +61,7 @@ export class RelativesComponent implements OnInit {
     })
   }
   deleteTeacher(id: number){
-    this.api.deleteTeacher(id)
+    this.api.deleteRelative(id)
     .subscribe({
       next:(res)=>{
         alert("Product deleted successfully")

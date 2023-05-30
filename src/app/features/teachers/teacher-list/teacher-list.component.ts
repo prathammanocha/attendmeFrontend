@@ -4,7 +4,6 @@ import { ApiService } from '../../../services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {TeacherdialogComponent } from 'src/app/teacherdialog/teacherdialog.component';
 
 @Component({
   selector: 'app-teacher-list',
@@ -22,18 +21,18 @@ export class TeacherListComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
-    this.getAllTeacher();
+    
   }
 
-  openDialog() {
-    this.dialog.open(TeacherdialogComponent, {
-      width:'30%'
-    }).afterClosed().subscribe(val=>{
-      if(val=='Saved'){
-        this.getAllTeacher
-      }
-    })
-  }
+  // openDialog() {
+  //   this.dialog.open(TeacherdialogComponent, {
+  //     width:'30%'
+  //   }).afterClosed().subscribe(val=>{
+  //     if(val=='Saved'){
+  //       this.getAllTeacher
+  //     }
+  //   })
+  // }
 
   getAllTeacher(){
       this.api.getTeacher()
@@ -48,17 +47,17 @@ export class TeacherListComponent implements OnInit {
         }
       })
   }
-  editTeacher(row : any){
-    this.dialog.open(TeacherdialogComponent, {
-      width:'30%',
-      data:row
-    }
-    ).afterClosed().subscribe(val=>{
-      if(val==='update'){
-        this.getAllTeacher();
-      }
-    })
-  }
+  // editTeacher(row : any){
+  //   this.dialog.open(TeacherdialogComponent, {
+  //     width:'30%',
+  //     data:row
+  //   }
+  //   ).afterClosed().subscribe(val=>{
+  //     if(val==='update'){
+  //       this.getAllTeacher();
+  //     }
+  //   })
+  // }
   deleteTeacher(id: number){
     this.api.deleteTeacher(id)
     .subscribe({

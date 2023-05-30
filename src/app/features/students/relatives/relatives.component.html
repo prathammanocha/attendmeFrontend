@@ -8,11 +8,11 @@
       </mat-card-header>
       <mat-card-content>
         <div class = "searchfield">
-          <button mat-raised-button color="primary" (click) = "openDialog2()" class = "addStudentBtn">Add Relative</button>
           <mat-form-field appearance="standard">
             <mat-label>Search</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
           </mat-form-field>
+          <button mat-raised-button color="primary" (click) = "openDialog2()" class = "addStudentBtn">Add Relatives</button>
         </div>
 
         <table mat-table [dataSource]="dataSource" matSort>

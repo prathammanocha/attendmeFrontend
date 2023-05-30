@@ -4,8 +4,6 @@ import { ApiService } from '../../../services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { StudentlistdialogComponent } from 'src/app/studentlistdialog/studentlistdialog.component';
-import { addstudentDialogComponent } from 'src/app/addstudentdialog/addstudentdialog.component';
 import { ParentsdialogComponent } from 'src/app/parentsdialog/parentsdialog.component';
 
 @Component({
@@ -38,7 +36,7 @@ export class ParentsComponent implements OnInit {
   }
 
   getAllTeacher(){
-      this.api.getTeacher()
+      this.api.getParents()
       .subscribe({
         next:(res)=>{
           this.dataSource = new MatTableDataSource(res);
@@ -52,7 +50,7 @@ export class ParentsComponent implements OnInit {
   }
 
   editTeacher(row : any){
-    this.dialog.open(StudentlistdialogComponent, {
+    this.dialog.open(ParentsdialogComponent, {
       width:'30%',
       data:row
     }
@@ -63,7 +61,7 @@ export class ParentsComponent implements OnInit {
     })
   }
   deleteTeacher(id: number){
-    this.api.deleteTeacher(id)
+    this.api.deleteParent(id)
     .subscribe({
       next:(res)=>{
         alert("Product deleted successfully")

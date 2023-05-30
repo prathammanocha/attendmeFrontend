@@ -7,79 +7,88 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class = "searchfield">
-          <mat-form-field appearance="standard">
-            <mat-label>Search</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-          </mat-form-field>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <mat-form-field appearance="standard">
-            <mat-label>Search</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-          </mat-form-field>
-        </div>
+        <br />
+        <br />
 
+        <mat-form-field appearance="outline" class="datepicker">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+            <input matStartDate formControlName="fromDateTime" placeholder="Start date" (dateChange)="getAllVisitors()">
+            <input matEndDate formControlName="toDateTime" placeholder="End date" (dateChange)="getAllVisitors()">            
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          <mat-error *ngIf="range.controls.fromDateTime.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+          <mat-error *ngIf="range.controls.toDateTime.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+        </mat-form-field>
+
+        <br />
+        <br />
         <table mat-table [dataSource]="dataSource" matSort>
 
-          <ng-container matColumnDef="FirstName" >
+          <ng-container matColumnDef="firstName">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.FirstName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
           </ng-container>
-          <!-- Student Name -->
-          <ng-container matColumnDef="LastName">
+          <!-- Last Name -->
+          <ng-container matColumnDef="lastName">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.LastName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
           </ng-container>
-  
-          <!-- Student ID -->
-          <ng-container matColumnDef="CompanyName">
+          
+          <!-- Visiting -->
+          <ng-container matColumnDef="visitingPerson">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Visiting </th>
-            <td mat-cell *matCellDef="let row"> {{row.CompanyName}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.visitingPerson}} </td>
           </ng-container>
-
-          <ng-container matColumnDef="Email">
+          
+          <!-- Purpose -->
+          <ng-container matColumnDef="purpose">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Purpose </th>
-            <td mat-cell *matCellDef="let row"> {{row.Email}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.purpose}} </td>
           </ng-container>
-  
-          <!-- College Name -->
-          <ng-container matColumnDef="Phone">
+          
+          <!-- Phone -->
+          <ng-container matColumnDef="phone">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-            <td mat-cell *matCellDef="let row"> {{row.Phone}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
           </ng-container>
-
-          <ng-container matColumnDef="In Date-Time">
+          
+          <!-- In Date-Time -->
+          <ng-container matColumnDef="inDateTime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> In Date-Time</th>
-            <td mat-cell *matCellDef="let row"> {{row.VisitorType}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.inDateTime}} </td>
           </ng-container>
-
-          <ng-container matColumnDef="Out Date-Time">
+          
+          <!-- Out Date-Time -->
+          <ng-container matColumnDef="outDateTime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Out Date-Time</th>
-            <td mat-cell *matCellDef="let row"> {{row.VisitorType}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.outDateTime}} </td>
           </ng-container>
-  
+          
           <!-- Actions Button -->
           <ng-container matColumnDef="Actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
-            <td mat-cell *matCellDef="let row"> 
+            <td mat-cell *matCellDef="let row">
               <button mat-icon-button (click)="openDialog(row.FirstName + ' ' + row.LastName, row.CompanyName)">
                 <mat-icon fontSet="material-icons-outlined">label</mat-icon>
               </button>
             </td>
           </ng-container>
-  
-  
+    
+    
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
+    
           <!-- Row shown when there is no matching data. -->
           <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell" colspan="4">No data matching the filter</td>
           </tr>
         </table>
-
+    
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
       </mat-card-content>
     </mat-card>
-  </div>
-</div>
+    
+    

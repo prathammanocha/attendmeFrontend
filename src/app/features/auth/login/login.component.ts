@@ -6,6 +6,7 @@ import { AuthenticationService } from 'src/app/core/services/auth.service';
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
+import { myCustomConstant } from 'src/app/config/constants';
 
 
 @Component({
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
         this.errormessage = false;
         const data = {userName: username, password: password};
         const body = JSON.stringify(data);
-        this.http.post<any>('https://localhost:5001/api/User/Authenticate', body,   
+        this.http.post<any>(myCustomConstant.API_ENDPOINT + '/api/User/Authenticate', body,   
         {headers: new HttpHeaders({
           'content-type': 'application/json' }), observe: 'response'})
         .subscribe({
@@ -65,7 +66,7 @@ export class LoginComponent implements OnInit {
             this.loading = false;
             this.errormessage = true;
            }
-          });
+        });
         // this.http.get<any>("http://localhost:3000/logindetails")
         // .subscribe(
         //     (res) => {

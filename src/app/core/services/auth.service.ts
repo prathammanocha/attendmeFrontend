@@ -3,9 +3,11 @@ import { HttpClient, HttpContext, HttpHeaders } from '@angular/common/http';
 import { delay, map } from 'rxjs/operators';
 import jwt_decode from 'jwt-decode';
 import * as moment from 'moment';
-
+import { myCustomConstant } from 'src/app/config/constants';
 import { environment } from '../../../environments/environment';
 import { of, EMPTY } from 'rxjs';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+
 
 @Injectable({
     providedIn: 'root'
@@ -63,7 +65,7 @@ export class AuthenticationService {
     }
 
     passwordResetRequest(email: string) {
-        return this.http.post('https://localhost:5001/api/User/UserExist?email=' + email, '', {headers: new HttpHeaders({
+        return this.http.post(myCustomConstant.API_ENDPOINT + '/api/User/UserExist?email=' + email, '', {headers: new HttpHeaders({
             'Accept': 'text/plain, */*',
             'Content-Type': 'application/json' // We send JSON
           }),
@@ -75,7 +77,7 @@ export class AuthenticationService {
     }
 
     passwordReset(token: string, confirmPassword: string) {
-        return this.http.post('https://localhost:5001/api/User/ResetPassword?token=' + token + '&newPassword=' + confirmPassword, '', {headers: new HttpHeaders({
+        return this.http.post(myCustomConstant.API_ENDPOINT + '/api/User/ResetPassword?token=' + token + '&newPassword=' + confirmPassword, '', {headers: new HttpHeaders({
             'Accept': 'text/plain, */*',
             'Content-Type': 'application/json'
           }),
@@ -83,7 +85,7 @@ export class AuthenticationService {
     }
 
     validateToken(token: string) {
-        return this.http.post('https://localhost:5001/api/User/ValidateToken?token=' + token, '', {headers: new HttpHeaders({
+        return this.http.post(myCustomConstant.API_ENDPOINT + '/api/User/ValidateToken?token=' + token, '', {headers: new HttpHeaders({
             'Accept': 'text/plain, */*',
             'Content-Type': 'application/json' // We send JSON
           }),
@@ -91,20 +93,44 @@ export class AuthenticationService {
     }
 
     getAllVisitors(token: string) {
-
-        return this.http.get('https://localhost:5001/api/Visitor', {headers: new HttpHeaders({
+        return this.http.get(myCustomConstant.API_ENDPOINT + '/api/Visitor', {headers: new HttpHeaders({
             'Accept': 'text/plain, */*',
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
           }), observe: 'response'})
     }
 
+    getAllVisitorsLog(token: string, fromDateTime: Date | null, toDateTime: Date | null) {
+        return this.http.get(myCustomConstant.API_ENDPOINT + '/api/Visitor/GetLogs?fromDateTime=' + fromDateTime?.toISOString() + '&toDateTime=' + toDateTime?.toISOString(), {headers: new HttpHeaders({
+            'Accept': 'text/plain, */*',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }), observe: 'response'})
+      }
+
+    getAllStudentsLog(token: string, fromDateTime: Date | null, toDateTime: Date | null) {
+        return this.http.get(myCustomConstant.API_ENDPOINT + '/api/Student/GetLogs?fromDateTime=' + fromDateTime?.toISOString() + '&toDateTime=' + toDateTime?.toISOString(), {headers: new HttpHeaders({
+            'Accept': 'text/plain, */*',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }), observe: 'response'})
+      }
+
     getTypes(token:string) {
-        return this.http.get('https://localhost:5001/api/Visitor/GetTypes', {headers: new HttpHeaders({
+        return this.http.get(myCustomConstant.API_ENDPOINT + '/api/Visitor/GetTypes', {headers: new HttpHeaders({
+            'Accept': 'text/plain, */*',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }), observe: 'response'})
+    }
+
+    getAllStudents(token:string) {
+        return this.http.get(myCustomConstant.API_ENDPOINT + '/api/Student', {headers: new HttpHeaders({
             'Accept': 'text/plain, */*',
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
           }), observe: 'response'})
     }
 }
+
 

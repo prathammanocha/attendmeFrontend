@@ -32,18 +32,19 @@ table {
 }
 
 .searchfield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     white-space: nowrap;
-    overflow-x: auto;
+    overflow-x: auto;  
 }
 
 .mat-form-field {
-    width: 35%;
-    display: inline-block;
+    width: 31.2%;
     font-family: "Open Sans", sans-serif;
 }
 
 .addStudentBtn {
-    display: inline-block;
     background-color: #3269B1;
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
